@@ -18,11 +18,10 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="0.3*"></RowDefinition>
             <RowDefinition Height="0.3*"></RowDefinition>
-            <RowDefinition Height="0.3*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Text="{Binding InfomationString}" FontSize="20"></TextBlock>
         <Button Grid.Row="1" Command="{Binding readySignal}" Content="Ready "></Button>
         <Button Grid.Row="2" Content="Generate Map" Command="{Binding GenerateMapBitmap}"></Button>
-        <Button Grid.Row="3" Content="End Game" Command="{Binding EndGame}"></Button>
+        
     </Grid>
 </Window>

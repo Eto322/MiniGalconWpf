@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
 
 namespace GalConeServerMapGeneratorUi.ViewModel;
 using TesterLib;
@@ -30,6 +31,7 @@ public class MainViewModel : NotifyPropertyChanged
                     {
                         worker.sendEnd(playerHandler);
                         InfomationString = " End of server initiated";
+                        System.Environment.Exit(0);
                     });
                 });
             }

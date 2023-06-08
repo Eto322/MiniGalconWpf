@@ -124,8 +124,21 @@ namespace TesterLib
                         graphics.DrawString(planetInfo.Id.ToString(), new Font("Arial", 10), Brushes.Black, positionX - 10, positionY - 5);
                     }
 
-                    // Save the image to a file
-                    bitmap.Save("planet_map.png", ImageFormat.Png);
+                   
+                    if (!Directory.Exists("results"))
+                    {
+                        Directory.CreateDirectory("results");
+                    }
+                    var filePath = Path.Combine("results", "planet_map.png");
+                    bitmap.Save(filePath, ImageFormat.Png);
+
+                    filePath = Path.Combine("results", "data.json");
+                    string jsonData = data.ToString();
+                    using (StreamWriter writer = File.CreateText(filePath))
+                    {
+                        writer.Write(jsonData);
+                    }
+
                 }
 
                 return ("Image saved as planet_map.png.");
